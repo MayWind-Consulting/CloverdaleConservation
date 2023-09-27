@@ -148,6 +148,33 @@
   textarea {
     resize: none;
   }
+  @media (max-width: 550px) {
+   .big-container {
+       display: none;
+   }
+  }
+  @media (min-width: 550px) {
+   .small-container {
+       display: none;
+   }
+  }
+  /* Responsive iFrame */
+  .responsive-iframe-container {
+     position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
+  .responsive-iframe-container iframe,   
+  .vresponsive-iframe-container object,  
+  .vresponsive-iframe-container embed {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+  }
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -272,7 +299,7 @@
 </div>
 
 <!-- Container (News Section) -->
-<div id="news" class="container text-center">
+<div id="news" class="responsive-iframe-container big-container">
   <div class="container">
     <h3 class="text-center">News</h3>
     <p class="text-center">Come see what we've got going on!<br> (These are my personal calendars, insert actual calendars later)</p>
