@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -148,6 +149,108 @@
   textarea {
     resize: none;
   }
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-name: fadeIn;
+    animation-duration: 1s
+  }
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1s;
+    animation-name: slideIn;
+    animation-duration: 1s
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes slideIn {
+    from {bottom:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #555;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #555;
+    color: white;
+}
+
+.responsiveCal {
+position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+}
+ 
+.responsiveCal iframe {
+position: absolute; top:0; left: 0; width: 100%; height: 100%;
+}
+
+@media all and (min-width: 768px) {
+    .deskContent {display:block;}
+    .phoneContent {display:none;}
+}
+
+@media all and (max-width: 767px) {
+    .deskContent {display:none;}
+    .phoneContent {display:block;}
+}
+
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -160,14 +263,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">CCC</a>
+      <a class="navbar-brand" href="#myPage">Cloverdale Conservation</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myPage">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#member">Membership and Rules</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
           <span class="caret"></span></a>
@@ -194,25 +293,25 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="assets/img/cara2.jpg" alt="New York" width="1200" height="700">
+        <img src="assets/img/cara2.jpg" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Welcome to The Cloverdale Conservation Club!</h3>
+          <h2>Welcome to The Cloverdale Conservation Club!</h2>
         </div>      
       </div>
 
       <div class="item">
-        <img src="assets/img/cara3.jpg" alt="Chicago" width="1200" height="700">
+        <img src="assets/img/cara3.jpg" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Shooting Range</h3>
-          <p>Rifle and Handgun</p>
+          <h2>Welcome to The Cloverdale Conservation Club!</h2>
+          <p></p>
         </div>      
       </div>
     
       <div class="item">
-        <img src="assets/img/cara5.jpg" alt="Los Angeles" width="1200" height="700">
+        <img src="assets/img/cara5.jpg" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Beautiful Pond</h3>
-          <p>Our catch and release pond!</p>
+          <h2>Welcome to The Cloverdale Conservation Club!</h2>
+          <p></p>
         </div>      
       </div>
     </div>
@@ -228,26 +327,146 @@
     </a>
 </div>
 
+<!-- Calendar test -->
+<div id="calendar" class="container center">
+  <h1>Come see what we've got going on!</h1>
+  <p><em> Click the "+" in the bottom right to add our calendar to yours!</em></p>
+    <br>
+    <div class="responsiveCal">
+      <div class="deskContent"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=MONTH&src=aGlja3MuaWFuLmxsb3lkQGdtYWlsLmNvbQ&src=ZmFtaWx5MDIxNDU2NTE4Nzc4NDE2NzQ4MTdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23D81B60&color=%237986CB" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      <div class="phoneContent"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=AGENDA&src=aGlja3MuaWFuLmxsb3lkQGdtYWlsLmNvbQ&src=ZmFtaWx5MDIxNDU2NTE4Nzc4NDE2NzQ4MTdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23D81B60&color=%237986CB" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe></div></div>
+</div>
+
 <!-- Archery  -->
-<div id="band" class="container text-center">
-  <h3>Archery Nationals</h3>
-  <p><em> (subject to change, need too resize sheet frame) </em></p>
-  <p>Here is a pending display for the Archery Nationals page!</p>
-  <br>
+<div id="list" class="container text-center">
   <div class="row">
-    <iframe width='110%' height="500" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZPfab4UFZI0B2OSt_rNHLsDabsjnUnNHqWVkXmVdu-wozsIKo0SrBY-dym51jUw/pubhtml?widget=true&amp;headers=false"></iframe>
+    <div class="col-sm-4">
+    <h2>Directions</h2>
+
+    <!-- Trigger/Open The Modal -->
+    <button class="modal-button" href="#myModal1">Directions</button>
+  
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+  
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2>Directions</h2>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3076.0338850965577!2d-86.79832612267727!3d39.55884350740388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886ce6e435244acd%3A0x9754bf0ac1d5077d!2sCloverdale%20Conservation%20Club!5e0!3m2!1sen!2sus!4v1695836713563!5m2!1sen!2sus" width='100%' height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <h2>Archery Scores</h2>
+  
+    <!-- Trigger/Open The Modal -->
+    <button class="modal-button" href="#myModal2">Archery</button>
+  
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+  
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2>Most recent archery national scores</h2>
+        </div>
+        <div class="modal-body">
+          <iframe width='95%' height=750 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRZPfab4UFZI0B2OSt_rNHLsDabsjnUnNHqWVkXmVdu-wozsIKo0SrBY-dym51jUw/pubhtml?widget=true&amp;headers=false"></iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h2>Photos</h2>
+    
+      <!-- Trigger/Open The Modal -->
+      <button class="modal-button" href="#myModal3">Photos</button>
+    
+      <!-- The Modal -->
+      <div id="myModal3" class="modal">
+    
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">×</span>
+            <h2>Modal Header</h2>
+          </div>
+          <div class="modal-body">
+            <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+              <div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
+                data-link="https://photos.app.goo.gl/rFYbGKJGNoxUrXZ28"
+                data-title="test"
+                data-description="5 new items added to shared album">
+                <object data="https://lh3.googleusercontent.com/pw/ABLVV865WuMunBBpJCENKHbXLZx5WYs1JxDnxxeVTBlPSQ5GqlcKADMqxglolKLjmtTax8p0VgT-7b70IMhMJlIUB718MEWMlK3kGQh-LIC2ppH0swj-M7AT=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/ABLVV85mMi1d3M3BS1OhI_XP3gOrUcVC6jhcpYrlk9EQj7UcELouvV1S2jUCDyacn9SGLJ2THE52Ek_w-63VgZVjHZwW_zYz7jg0zl6T2rXWPT1aGsiEPYqs=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/ABLVV85QGMe5MUbzfNKKtt9DtdNwzHWJof6vzHq-AfvP9DGGyoohf7F4M3MOoNI9XpcyHXrazq1dEepy0mRuLflefAH_rLq1zk8k6lfadjFh-vpCKcV7eb2Q=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/ABLVV86pgMkkdhSHUjFnMDVZahItHEs2UVULkq3khX55l4ZjIH5cqHDCwPdfC4QkkOW25VXggICfbnpI6FztMMwEwfA9VI8N1nJOx9fBOZ3XY7xuWUl9x6wT=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/ABLVV862rrGQt1c-wu9lfEg3hux62Jd_S5guyY_EjRogvEzTTTQQevL6Lu1M2vlNZhKJPmdEBy8dAG6g_lN2Zx1LAQGGETbWDjN9U7I7MBBU5E5AncLuIlP6=w1920-h1080"></object>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 <!-- Footer -->
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
+  </a><br>
+  <p>Find us on Facebook!</p>
+  <a href="https://www.facebook.com/CloverdaleConservationClub/"><i class="fa fa-facebook" style='font-size:36px'></i></a>
+  <br><br>
   <p> Made By MayWind</a></p> 
 </footer>
 
 <script>
+// Get the button that opens the modal
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
+}
 $(document).ready(function(){
   // Initialize Tooltip
   $('[data-toggle="tooltip"]').tooltip(); 
